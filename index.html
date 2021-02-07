@@ -15,8 +15,18 @@
 
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext("2d");
+        const orcky = document.querySelector("img");
+
+        orcky.addEventListener("load", terminouDeCarregar);
+
         ctx.fillStyle = "green";
         ctx.fillRect(0,0,canvas.width,canvas.height);
+
+        function terminouDeCarregar() 
+        {
+            ctx.drawImage(orcky,0,0);
+        }
+        
 
     </script>
 </body>
