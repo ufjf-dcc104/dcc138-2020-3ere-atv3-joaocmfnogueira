@@ -13,10 +13,10 @@
 
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext("2d");
-        const orcky = new Image();
-        orcky.src = "assets/orcky.png";
+        const Abigail = new Image();
+        Abigail.src = "assets/Abigail.png";
 
-        orcky.addEventListener("load", terminouDeCarregar);
+        Abigail.addEventListener("load", terminouDeCarregar);
 
         function desenhaFundo()  {
             ctx.fillStyle = "green";
@@ -29,27 +29,15 @@
         let pose = 0;
         let quadro = 0;
         const POSES = [
-        {qmax: 7, pv:9},
-        {qmax: 7, pv:9},
-        {qmax: 7, pv:9},
-        {qmax: 7, pv:9}, 
-        {qmax: 8, pv:9},
-        {qmax: 8, pv:9},
-        {qmax: 8, pv:9},
-        {qmax: 8, pv:9}, 
-        {qmax: 9, pv:9},
-        {qmax: 9, pv:9},
-        {qmax: 9, pv:9},
-        {qmax: 9, pv:9},
-        {qmax: 6, pv:9},
-        {qmax: 6, pv:9},
-        {qmax: 6, pv:9},
-        {qmax: 6, pv:9},
-        {qmax: 13, pv:18}, 
-        {qmax: 13, pv:18},
-        {qmax: 13, pv:18},
-        {qmax: 13, pv:18}, 
-        {qmax: 6, pv:9 }
+        {qmax: 4, pv:4},
+        {qmax: 4, pv:4},
+        {qmax: 4, pv:4},
+        {qmax: 4, pv:4}, 
+        {qmax: 4, pv:4},
+        {qmax: 4, pv:4}, 
+        {qmax: 4, pv:4},
+        {qmax: 4, pv:4}
+       
         ];
 
         function terminouDeCarregar() {
@@ -69,11 +57,11 @@
             quadro + POSES[pose].pv * dt;
             
 
-            ctx.drawImage(orcky,
+            ctx.drawImage(Abigail,
             //sx, sy, sw, sh
-            Math.floor(quadro) * 64, pose * 64, 64, 64,
+            Math.floor(quadro) * 16, pose * 32.5, 16.5, 32,
             //dx, dy, dw, dh
-            0, 0, 64, 64  
+            50, 50, 64, 64
             );
 
             requestAnimationFrame(passo);
